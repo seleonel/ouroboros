@@ -1,5 +1,5 @@
 # ouroboros
-<img src="imagens/ouroboros.png" width="300" height="2200"> 
+<img src="imagens/ouroboros.png" width="300" height="200"> 
 <br>
 <br>
 <h3> <b>  O que é o projeto?</b> </h3>
