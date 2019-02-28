@@ -1,10 +1,12 @@
 # ouroboros
-<img src="imagens/ouroboros.png" width="300" height="200"> 
+<img src="imagens/ouroboros.png" width="300" height="200">
 <br>
 <br>
 <h3> <b>  O que é o projeto?</b> </h3>
 <br>
-Projeto de física "Ora bolas" baseado no movimento de um robô projetado para jogar futebol.
+<p> Projeto de física "Ora bolas", orientado pela professora Simone Camargo.</p>
+<p> O projeto consiste na criação de um software que calcule a menor rota de colisão de um robô, cuja posição inicial é aleatória, com uma bola em um jogo de futebol. Para a realização do cálculo também deve-se considerar: as dimensões do robô; o campo de futebol, com medida 9m x 6m; e a trajetória da bola, pré-estabelecida pelo arquivo /recursos/trajetoria_1sem2019.txt.  </p>
+<p> Para mais informações consulte /recursos/Projeto_CF2111_Ora_bolas_2019.pdf</p>
 <br>
 <h2 style="text-align: center;"> TO DO LIST </h2>
 <br>
