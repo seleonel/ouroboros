@@ -8,6 +8,9 @@
 <p> O projeto consiste na criação de um software que calcule a menor rota de colisão de um robô, cuja posição inicial é aleatória, com uma bola em um jogo de futebol. Para a realização do cálculo também deve-se considerar: as dimensões do robô; o campo de futebol, com medida 9m x 6m; e a trajetória da bola, pré-estabelecida pelo arquivo /recursos/trajetoria_1sem2019.txt.  </p>
 <p> Para mais informações consulte /recursos/Projeto_CF2111_Ora_bolas_2019.pdf</p>
 <br>
+<h3> <b>  Trajetória da bola</b> </h3>
+<img src="imagens/Trajetoria_bola.png" width="800" height="450">
+<br>
 <h2 style="text-align: center;"> TO DO LIST </h2>
 <br>
 <ol>
