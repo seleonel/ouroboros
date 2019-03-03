@@ -9,6 +9,7 @@
 <p> Para mais informações consulte /recursos/Projeto_CF2111_Ora_bolas_2019.pdf</p>
 <br>
 <h3> <b>  Trajetória da bola</b> </h3>
+<br>
 <img src="imagens/Trajetoria_bola.png" width="800" height="450">
 <br>
 <h2 style="text-align: center;"> TO DO LIST </h2>
