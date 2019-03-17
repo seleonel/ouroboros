@@ -5,20 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 
-/*char* pegarDiretorio(){
-    int i;
-    char diretorio[FILENAME_MAX];
-    getcwd(diretorio, FILENAME_MAX); //detecta o diretório no qual contém o arquivo executável e salva na
-    for(i=0;i<FILENAME_MAX;i++){ //substitui as "\" por "/", pois são estas as utilizadas para a função main
-        if(diretorio[i] == '\\'){
-            diretorio[i] = '/';
-        }
-    }
-    return diretorio;
-}*/
-
 void salvarCoordenadas(double bola_tempo[], double bola_x[], double bola_y[], int numlinhas){
-  //pegarDiretorio()
   int i = 0;
   FILE * coordenadas; // ponteiro do tipo FILE
 
@@ -47,14 +34,5 @@ void plotGraficos(double bola_tempo[], double bola_x[], double bola_y[], int num
   system("gnuplot ../recursos/scripts/script3.gnu");
 
 }
-
-/* Exemplo para função main
-int main(){
-    char diretorio[FILENAME_MAX];
-    pegarDiretorio(diretorio);
-    printf("%s", diretorio);
-    return 0;
-}
-*/
 
 #endif /* PLOTAR_H */
