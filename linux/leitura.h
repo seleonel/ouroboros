@@ -10,29 +10,35 @@
  *
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+#ifndef LEITURA_H
+#define LEITURA_H
 void convString(char* linha, char delimit[], double* pont_tempo, double* x, double* y)
 {
 	char* s_ponteiro	= strtok(linha, delimit); // strtok separa string por tokens e finaliza com \0, para final de linha.
-	int k;
-	for( k = 1 ; s_ponteiro ; s_ponteiro = strtok(NULL, delimit))
+	int k = 1;
+	
+	for( k = 1 ; s_ponteiro != NULL ; s_ponteiro = strtok(NULL, delimit))
 	{
-		printf("%i\t%s\n", k, s_ponteiro); // tempo com k = 1, x com k = 2 e y com k = 3, converter todos num switch case ou if
+	
+		switch(k){
+			case 1: *pont_tempo = strtod(s_ponteiro, NULL); // k valendo 1 equivale ao tempo 
+			case 2:	*x = strtod(s_ponteiro, NULL);	// k como 2 é x
+			case 3: *y = strtod(s_ponteiro, NULL);		// k como 3 é y
+		}
 		k++;
 	}
+		
 }
 
 
-int leitura (void)
+int leitura (double tempo[], double xf[], double yf[])
 {
+	double	 tempo_unico, x_un, y_un;
+	tempo_unico = x_un = y_un = 0.0f;
 	FILE*	 arq_coord; // ponteiro do tipo FILE
-	char	 linha[26]; // char string declarada com 26 caracteres deve conter o NULL character
+	char	 linha[30]; // char string declarada com 26 caracteres deve conter o NULL character
 	char	 delimit[] 	= ";\n"; // separar por ";" e novas linhas
 	int	 i;
-	double	 xf, yf, tempo;
 
 	arq_coord 		= fopen( "../recursos/trajetoria_bola.csv" , "r" );
 	
@@ -43,21 +49,19 @@ int leitura (void)
 		return 1;
 	}
 
-	for( i = 0 ; fgets(linha, 26, arq_coord) ; i++ ) { // fgets retorna ponteiro NULL se encontrar EOF
-		if( i > 1 ) 		// ignora a primeira linha (nomes dos eixos)
+	for( i = 0 ; fgets(linha, 30, arq_coord) ; i++ ) { // fgets retorna ponteiro NULL se encontrar EOF
+	
 		{
-			 convString( linha, delimit, &tempo, &xf, &yf);
-   		 	 //printf("%s", linha);
+			convString( linha, delimit, &tempo_unico, &x_un, &y_un );
+			// grava cada dado convertido num vetor específico definido na função principal 
+			tempo[i] 	 = tempo_unico;
+			xf[i] 	 = x_un;
+			yf[i]	 = y_un;
+	 					 
 		}
 	}
 
 	fclose(arq_coord);
 	return 0;
 }
-int main (void)
-{
-
-	printf("Processo terminado com %i\n", leitura());
-	return 0;
-
-}
+#endif

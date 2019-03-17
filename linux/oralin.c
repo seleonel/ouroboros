@@ -23,6 +23,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "leitura.h"
+#define NUM_LINHAS 367
 /* 
  * Mais tardiamente, poderá ser adicionada a biblioteca SDL, a gameengine pedida
  */
@@ -39,20 +41,9 @@ void definicaoPosRobo(float *r_x0, float *r_y0)
 
 }
 
-void leituraBola(float *b_x0, float *b_y0, float *b_x, float *b_y)
-{
-
-	/* 
-	 * funcao getline (https://linux.die.net/man/3/getline) do stdin lê uma linha de uma stream
-	 * 
-	 * Como separar os carácteres pelo espaço? strtok() separa cada string em tokens e finaliza com NULL
-	 *
-	 * devemos usar essa função pra tudo?
-	 *
-	 */
 
 
-}
+
 
 void plotGraficos()
 {
@@ -67,9 +58,8 @@ void plotGraficos()
 int main (void)
 
 {
-	 /* 
-	  *  Serão determinadas dimensões do robô e da bola
-	 */
+	int i;
+	 //  Serão determinadas dimensões do robô e da bola
 
 	// determinado pelo comitê da robocup como limite 0,18 metros de raio
 	float raio_robo = 0.180f;
@@ -86,15 +76,19 @@ int main (void)
 	// posicoes iniciais e momentaneas x e y do robo
 	float robo_x0, robo_y0, robo_x, robo_y;
 	// utilizaremos ponteiros
-	definicaoPosRobo(&robo_x0, &robo_y0);	
+//	definicaoPosRobo(&robo_x0, &robo_y0);	
 	
 	// posicao da bola sera determinada pela leitura do arquivo txt, também serão usados ponteiros
-	float bola_x0, bola_y0, bola_x, bola_y;
-	leituraBola(&bola_x0, &bola_y0, &bola_x, &bola_y); // funcao le cada linha do arquivo linha da bola
-
+	double bola_tempo[400]	= {};
+	double bola_x[400] 	= {};
+       	double bola_y[400] 	= {};
+	int controle = leitura(bola_tempo, bola_x, bola_y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
+	for(i = 2 ; i < NUM_LINHAS ; i ++) 
+		printf("tempo: %f x: %.8f y: %f\n", bola_tempo[i], bola_x[i], bola_y[i]);
+		
 
 	// última função antes da finalização do programa
-	void plotGraficos();
+	plotGraficos();
 	
 	return 0;
 }
