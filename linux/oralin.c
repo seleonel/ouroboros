@@ -25,26 +25,36 @@
 #include <string.h>
 #include "leitura.h"
 #include "plotar.h"
+// nosso header contendo a estrutura de medidas do robo e bola
+#include "elementos.h"
 #define NUM_LINHAS 367
+#define LINHA_INIC 2
 /*
  * Mais tardiamente, poderá ser adicionada a biblioteca SDL, a gameengine pedida
  */
 
 // funcoes podem ser "jogadas" num header para mais limpeza
-void definicaoPosRobo(float *r_x0, float *r_y0)
+void definicaoPosRobo(elementos *r)
 {
+	double x0, y0;
 	/*
 	 * Primeiro contato com usuário, serão pedidas as coordenadas x e y iniciais
 	 * Se possível, evitar utilizar scanf (buffer overflow), fgets() será implementado mais tarde
 	 */
-	puts("Insira um valor para X e Y iniciais para o robô");
-	scanf("%f %f", r_x0, r_y0);
+	puts("Insira um valor para X e Y iniciais para o robô\n");
+	scanf("%lf", &x0);
+	scanf("%lf", &y0);
+	r->x[LINHA_INIC] = x0;
+	r->y[LINHA_INIC] = y0;
 
 }
 
 int main (void)
 
 {
+
+	elementos bola, robo;
+	// para for loops
 	int i;
 	 //  Serão determinadas dimensões do robô e da bola
 
@@ -60,22 +70,23 @@ int main (void)
 
 	float vel_robo = 6.5f; // 6,5 m/s como limite determinado pela robocup
 
-	// posicoes iniciais e momentaneas x e y do robo
-	float robo_x0, robo_y0, robo_x, robo_y;
-	// utilizaremos ponteiros
-//	definicaoPosRobo(&robo_x0, &robo_y0);
+	// zero os vetores da bola e robo
+	for(i = 0; i < 400; i++)
+		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
+		
+	// definiçao das posições iniciais do robo (vetor no indice 2)
+	definicaoPosRobo(&robo);
 
-	// posicao da bola sera determinada pela leitura do arquivo txt, também serão usados ponteiros
-	double bola_tempo[400]	= {};
-	double bola_x[400] 	= {};
-       	double bola_y[400] 	= {};
-	int controle = leitura(bola_tempo, bola_x, bola_y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
-	for(i = 2 ; i < NUM_LINHAS ; i ++)
-		printf("tempo: %f x: %.8f y: %f\n", bola_tempo[i], bola_x[i], bola_y[i]);
+	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
+	//for(i = LINHA_INIC ; i < NUM_LINHAS ; i ++)
+	//	printf("tempo: %f x: %.8f y: %f\n ", bola.tempo[i], bola.x[i], bola.y[i]);
+
+	//	printf("robo: %f %f\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
+
 
 
 	// última função antes da finalização do programa
-	plotGraficos(bola_tempo, bola_x, bola_y, NUM_LINHAS);
+	plotGraficos(bola.tempo, bola.x, bola.y, NUM_LINHAS);
 
 	return 0;
 }
