@@ -78,22 +78,9 @@ int main (void)
 {
 
 	elementos bola, robo;
-	// para for loops e versores para definição de posição do robo
-	int i, multipy, multipx;
-	
-	 //  Serão determinadas dimensões do robô e da bola
-
-	// determinado pelo comitê da robocup como limite 0,18 metros de raio
-	float raio_robo = 0.180f;
-
-	// determinado pela força aplicada sobre a bola
-	float dist_bounce = 0.0f;
-
-	//padrões de uma bola de golfe
-	float raio_bola = 0.046f;
+	// para for loops
+	int i;
 	float raio_interc = raio_robo + raio_bola + dist_bounce; // bola sob o domínio do robo
-
-	float vel_robo = 6.5f; // 6,5 m/s como limite determinado pela robocup
 	
 	// zero os vetores da bola e robo
 	for(i = 0; i < 400; i++)
@@ -114,7 +101,7 @@ int main (void)
 	//	printf("robo: %f %f\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
 	
 	// teste para visualizar os versores
-	 	printf("Versor em Y: %d Versor em X: %d\n", multipy, multipx);
+	// 	printf("Versor em Y: %d Versor em X: %d\n", multipy, multipx);
 
 
 	// última função antes da finalização do programa
