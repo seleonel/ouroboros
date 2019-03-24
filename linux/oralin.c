@@ -49,13 +49,38 @@ void definicaoPosRobo(elementos *r)
 
 }
 
+void definicaoDirRobo(int* mpx, int* mpy, 
+	              double robo_x0, double robo_y0, 
+		      double bola_x0, double bola_y0)
+{
+	if (robo_x0 > bola_x0)
+	{
+    	*mpx = -1;
+    		if(robo_y0 > bola_y0)
+        		*mpy = -1;
+    		else
+        		*mpy = 1;
+ 	}else
+	{
+    		*mpx = 1;
+    		if(robo_y0 > bola_y0)
+       			*mpy = -1;
+    		else
+        		*mpy = 1;
+
+	}
+
+
+}
+
 int main (void)
 
 {
 
 	elementos bola, robo;
-	// para for loops
-	int i;
+	// para for loops e versores para definição de posição do robo
+	int i, multipy, multipx;
+	
 	 //  Serão determinadas dimensões do robô e da bola
 
 	// determinado pelo comitê da robocup como limite 0,18 metros de raio
@@ -69,20 +94,27 @@ int main (void)
 	float raio_interc = raio_robo + raio_bola + dist_bounce; // bola sob o domínio do robo
 
 	float vel_robo = 6.5f; // 6,5 m/s como limite determinado pela robocup
-
+	
 	// zero os vetores da bola e robo
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
 		
 	// definiçao das posições iniciais do robo (vetor no indice 2)
 	definicaoPosRobo(&robo);
-
+	// define o versor para posição inicial, função será utilizada novamente 
+	definicaoDirRobo(&multipx, &multipy, robo.x[LINHA_INIC], robo.y[LINHA_INIC], bola.x[LINHA_INIC], bola.y[LINHA_INIC]);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
+	// testes
+	//
+	// teste para ver dados da bola
 	//for(i = LINHA_INIC ; i < NUM_LINHAS ; i ++)
 	//	printf("tempo: %f x: %.8f y: %f\n ", bola.tempo[i], bola.x[i], bola.y[i]);
-
+	
+	// teste para ver posição inicial do robo
 	//	printf("robo: %f %f\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
-
+	
+	// teste para visualizar os versores
+	 	printf("Versor em Y: %d Versor em X: %d\n", multipy, multipx);
 
 
 	// última função antes da finalização do programa
