@@ -14,12 +14,12 @@ void salvarCoordenadas(double bola_tempo[], double bola_x[], double bola_y[], in
     fprintf(coordenadas, "%f %f\n", bola_x[i], bola_y[i]);
   fclose(coordenadas);
 
-  coordenadas = fopen("../recursos/coordenadas/xPorTempo.txt", "w");
+  coordenadas = fopen("../recursos/coordenadas/xBolaPorTempo.txt", "w");
   for(i = 2; i < numlinhas; i++) // posição da bola X em função do tempo
     fprintf(coordenadas, "%f %f\n", bola_tempo[i], bola_x[i]);
   fclose(coordenadas);
 
-  coordenadas = fopen("../recursos/coordenadas/yPorTempo.txt", "w");
+  coordenadas = fopen("../recursos/coordenadas/yBolaPorTempo.txt", "w");
   for(i = 2; i < numlinhas; i++) // posição da bola Y em função do tempo
     fprintf(coordenadas, "%f %f\n", bola_tempo[i], bola_y[i]);
   fclose(coordenadas);

@@ -1,7 +1,5 @@
-set terminal png medium size 600,600 enhanced;
-
 set encoding utf8
-set term pngcairo font "sans,12"
+set term pngcairo font "helvetica, 16" size 1440, 900 enhanced
 
 set title 'Y em função de tempo'
 
@@ -9,8 +7,11 @@ set xrange [0:8]
 set yrange [0:6]
 
 set xlabel 'Tempo (s)'
-set ylabel 'Coordenada Y'
+set ylabel 'Y (m)'
+
+set key below right
 
 set out '../graficos/yPorTempo.png'
 
-plot '../recursos/coordenadas/yPorTempo.txt' with lines
+plot '../recursos/coordenadas/yBolaPorTempo.txt' title 'Bola' with lines
+     # , \ '../recursos/coordenadas/yRoboPorTempo.txt' title 'Robô' with lines
