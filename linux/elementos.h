@@ -10,6 +10,7 @@ typedef struct
     double tempo[400];
     double    x[400] ;
     double    y[400] ;
+    double    distancia[400];
 }elementos;
 
 int multipy, multipx;

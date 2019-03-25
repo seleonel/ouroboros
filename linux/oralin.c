@@ -72,6 +72,42 @@ void definicaoDirRobo(int* mpx, int* mpy,
 
 
 }
+double definicVelRobo(elementos *Robo, elementos *Bola, int iterador, float v_m)
+{
+	double velocidade, tempo_final;
+	tempo_final = Bola->tempo[iterador];
+	Robo->tempo[iterador] = tempo_final;
+	velocidade = Robo->distancia[iterador] / tempo_final;
+	if (velocidade < v_m)
+		return velocidade;
+	else
+		return 0;
+
+}
+void definicMovRobo(elementos *Bol, elementos *Rob, int *versor_x, int *versor_y, float raio_interc, float vel_max )
+{
+	// começamos por pitagoras
+	// distancia é a hipotenusa
+	double rob_x0 = Rob->x[LINHA_INIC];
+	double rob_y0 = Rob->y[LINHA_INIC];
+	double rob_xf, rob_yf, rob_vels[NUM_LINHAS];
+	int i;
+	// calcular todas as distancias possíveis
+	for(i = LINHA_INIC; i < NUM_LINHAS; i++)
+	{
+		rob_xf = Bol->x[i];
+		rob_yf = Bol->y[i];
+		Rob->distancia[i] = (sqrt(pow(( rob_xf - rob_x0 ), 2) + pow(( rob_yf - rob_y0), 2))) - raio_interc; 
+		rob_vels[i] = definicVelRobo(Rob, Bol,i, vel_max);
+		
+	}
+	for(i = LINHA_INIC ; i < NUM_LINHAS ; i++)
+		if(Rob->tempo[i] != 0 && rob_vels[i] != 0) 
+			printf("Velocidades possíveis: %lf, distancia: %g, tempo: %g\n", rob_vels[i], Rob->distancia[i], Rob->tempo[i]);
+
+
+
+}
 
 int main (void)
 
@@ -91,6 +127,7 @@ int main (void)
 	// define o versor para posição inicial, função será utilizada novamente 
 	definicaoDirRobo(&multipx, &multipy, robo.x[LINHA_INIC], robo.y[LINHA_INIC], bola.x[LINHA_INIC], bola.y[LINHA_INIC]);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
+	definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo);
 	// testes
 	//
 	// teste para ver dados da bola
