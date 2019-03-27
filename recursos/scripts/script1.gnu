@@ -15,3 +15,4 @@ set out '../graficos/posicaoBola.png'
 
 plot '../recursos/coordenadas/posicaoBola.txt' title 'Bola' lt rgb 'blue' with lines, \
      '../recursos/coordenadas/trajetoriaRobo.txt' title 'Robô' lt rgb '#ee42f4' with lines
+
