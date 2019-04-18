@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "logar.h"
 #include "leitura.h"
 #include "plotar.h"
 // nosso header contendo a estrutura de medidas do robo e bola
@@ -35,7 +36,7 @@
  */
 
 // funcoes podem ser "jogadas" num header para mais limpeza
-void definicaoPosRobo(elementos *r)
+void definicaoPosRobo(elementos *r, short int v)
 {
 	double x0, y0;
 	/*
@@ -48,12 +49,15 @@ void definicaoPosRobo(elementos *r)
 	scanf("%lf", &y0);
 	r->x[LINHA_INIC] = x0;
 	r->y[LINHA_INIC] = y0;
+	if (v != 0)
+		logar("posicao robo","X0", "Y0", x0, y0 );
 
 }
 
 void definicaoDirRobo(int* mpx, int* mpy,
 	              double robo_x0, double robo_y0,
-		      double bola_x0, double bola_y0)
+		      double bola_x0, double bola_y0,
+		      short int v)
 {
 	if (robo_x0 > bola_x0)
 	{
@@ -84,6 +88,8 @@ void definicaoDirRobo(int* mpx, int* mpy,
 			 else
 					 *mpy = 0;
 	}
+	if (v != 0)
+		logar("direcao", "Versor X", "Versor Y", *mpx, *mpy);
 }
 
 
@@ -110,7 +116,7 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, float comp_x, float c
 }
 
 
-float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, int vers_x, int vers_y)
+float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, int vers_x, int vers_y, short int v)
 {
     float angulo    = 0.0f;
     // x e y positivo, considerar a opção
@@ -122,11 +128,12 @@ float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, i
 			angulo = atan2(fabs(rob_yf - rob_y0), fabs(rob_xf - rob_x0));
 		else //Robô na mesma posição Y que a bola
 			return 0;
-
+	if(v != 0)
+		logar("definicao angulo", "angulo", "", angulo * (180/PI), 0);
     return angulo * (180/PI); //converte de radianos para graus
 }
 
-void defineComponentes(double* componenteX, double* componenteY, float modulo, float angulo, int vers_x, int vers_y) {
+void defineComponentes(double* componenteX, double* componenteY, float modulo, float angulo, int vers_x, int vers_y, short int v) {
 
 	if(vers_x > 0){ //Robô anda pra direita
 		if(vers_y < 0) { //Robô anda pra baixo
@@ -170,6 +177,8 @@ void defineComponentes(double* componenteX, double* componenteY, float modulo, f
 			*componenteY = 0;
 		}
 	}
+	if (v != 0)
+		logar("definicao componentes", "componente x", "componente y",*componenteX, *componenteY);
 }
 
 void atualizaPosicao(elementos* Rob, double componenteX, double componenteY, int i){
@@ -183,7 +192,7 @@ float distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
 }
 
 
-int definicMovRobo(elementos *Bol, elementos *Rob, int versor_x, int versor_y, float raio_interc, float vel_max )
+int definicMovRobo(elementos *Bol, elementos *Rob, int versor_x, int versor_y, float raio_interc, float vel_max, short int v )
 {
 	double rob_x0 	 	= Rob->x[LINHA_INIC];
 	double rob_y0	 	= Rob->y[LINHA_INIC];
@@ -204,7 +213,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int versor_x, int versor_y, f
 		Rob->tempo[i] = Bol->tempo[i];
 		soma_tempos += Bol->tempo[i];
 
-		definicaoDirRobo(&versor_x, &versor_y, Rob->x[i-1], Rob->y[i-1], Bol->x[i-1], Bol->y[i-1]);
+		definicaoDirRobo(&versor_x, &versor_y, Rob->x[i-1], Rob->y[i-1], Bol->x[i-1], Bol->y[i-1], v);
 
 		if(soma_tempos >= temp_accel && soma_tempos <= (temp_accel + temp_desac))
 		// definicao do modulo
@@ -213,9 +222,9 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int versor_x, int versor_y, f
 			distancia = 0.02f;
 
     // definição do angulo
-    angulo_temp = definicAngul(Rob->x[i-1], rob_xf, Rob->y[i-1], rob_yf, versor_x, versor_y );
+    angulo_temp = definicAngul(Rob->x[i-1], rob_xf, Rob->y[i-1], rob_yf, versor_x, versor_y, v );
 		//define componentes
-		defineComponentes(&componenteX, &componenteY, distancia, angulo_temp, versor_x, versor_y);
+		defineComponentes(&componenteX, &componenteY, distancia, angulo_temp, versor_x, versor_y, v);
 		atualizaPosicao(Rob, componenteX, componenteY, i);
 
 //	 	definicVelRobo(Rob, Bol, i, componenteX, componenteY, versor_x, versor_y);
@@ -227,15 +236,26 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int versor_x, int versor_y, f
 	return i;
 }
 
-int main (void)
-
+int main (int argc, char * argv[])
 {
-
+	FILE * log = fopen("../logs/log", "w");
+	fclose(log);
 	elementos bola, robo;
 	robo.diam		 = 0.180f;
 	bola.diam	 	 = 0.046f;
 	robo.vel.x[2] 		 = 0.0;
 	robo.vel.y[2] 		 = 0.0;
+	short int verboso 	= 0;	
+	if(argc > 3)
+	{
+		puts("O programa apenas recebe um argumento");
+		return 0;
+	}
+	if(!(strcmp(argv[1], "-e")) || !(strcmp(argv[1], "-v")))
+		verboso = 1;
+	else
+		printf("Argumento %s não reconhecido\n", argv[1]);
+
 	// para for loops
 	int i, pontoDeEncontro;
 	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce; // bola sob o domínio do robo
@@ -245,12 +265,13 @@ int main (void)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
 
 	// definiçao das posições iniciais do robo (vetor no indice 2)
-	definicaoPosRobo(&robo);
+	definicaoPosRobo(&robo, verboso);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
-	pontoDeEncontro = definicMovRobo(&bola, &robo, multipy, multipx, raio_interc, vel_robo);
+	pontoDeEncontro = definicMovRobo(&bola, &robo, multipy, multipx, raio_interc, vel_robo, verboso);
 
 	// última função antes da finalização do programa
 	plotGraficos(&bola, &robo, NUM_LINHAS, pontoDeEncontro, robo.diam, bola.diam);
 
-	return 0;
+	logar("Final programa", "erro?", "",controle , 0);
+	return controle;
 }
