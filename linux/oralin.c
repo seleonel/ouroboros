@@ -128,8 +128,6 @@ float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, i
 
 void defineComponentes(double* componenteX, double* componenteY, double modulo, double angulo, int* vers_x, int* vers_y) {
 
-	printf("%lf\n", angulo);
-
 	if(*vers_x > 0){ //Robô anda pra direita
 		if(*vers_y < 0) { //Robô anda pra baixo
 			*componenteX = (sin(angulo) * modulo);
@@ -149,7 +147,8 @@ void defineComponentes(double* componenteX, double* componenteY, double modulo, 
 			*componenteX = (sin(angulo) * modulo);
 			*componenteY = (cos(angulo) * modulo);
 		}
-		else if(*vers_y > 0) { //Robô anda pra cima			*componenteX = (cos(angulo) * modulo);
+		else if(*vers_y > 0) { //Robô anda pra cima
+			*componenteX = (cos(angulo) * modulo);
 			*componenteY = (sin(angulo) * modulo);
 		}
 		else{ // Y do Robô igual ao da bola
