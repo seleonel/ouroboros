@@ -118,9 +118,9 @@ float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, i
     // considerar y positivo
 
 		if(*vers_y < 0) //Robô acima da bola
-			angulo = atan2((rob_xf - rob_x0), (rob_yf - rob_y0));
+			angulo = atan2(fabs(rob_xf - rob_x0), fabs(rob_yf - rob_y0));
 		else if(*vers_y > 0) //Robô abaixo da bola
-			angulo = atan2((rob_yf - rob_y0), (rob_xf - rob_x0));
+			angulo = atan2(fabs(rob_yf - rob_y0), fabs(rob_xf - rob_x0));
 		else //Robô na mesma posição Y que a bola
 			return 0;
 
@@ -135,7 +135,7 @@ void defineComponentes(double* componenteX, double* componenteY, double modulo, 
 	if(*vers_x > 0){ //Robô anda pra direita
 		if(*vers_y < 0) { //Robô anda pra baixo
 			*componenteX = (sin(angulo) * modulo);
-			*componenteY = (cos(angulo) * modulo);
+			*componenteY = -(cos(angulo) * modulo);
 		}
 		else if(*vers_y > 0) { //Robô anda pra cima
 			*componenteX = (cos(angulo) * modulo);
@@ -148,11 +148,11 @@ void defineComponentes(double* componenteX, double* componenteY, double modulo, 
 	}
 	else if(*vers_x < 0){ //Robô anda pra esquerda
 		if(*vers_y < 0) { //Robô anda pra baixo
-			*componenteX = (sin(angulo) * modulo);
-			*componenteY = (cos(angulo) * modulo);
+			*componenteX = -(sin(angulo) * modulo);
+			*componenteY = -(cos(angulo) * modulo);
 		}
 		else if(*vers_y > 0) { //Robô anda pra cima
-			*componenteX = (cos(angulo) * modulo);
+			*componenteX = -(cos(angulo) * modulo);
 			*componenteY = (sin(angulo) * modulo);
 		}
 		else{ // Y do Robô igual ao da bola
@@ -186,7 +186,8 @@ void atualizaPosicao(elementos* Rob, double componenteX, double componenteY, int
 }
 
 double distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
-	return sqrt(pow(fabs(robX-bolaX), 2) + pow(fabs(robY-bolaY), 2));
+	printf("%lf\n", sqrt(pow((robX-bolaX), 2) + pow((robY-bolaY), 2)));
+	return sqrt(pow((robX-bolaX), 2) + pow((robY-bolaY), 2));
 }
 
 
@@ -201,6 +202,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 	int i, accel;
 
 	distancia 		= 0.023f;
+	printf("Raio de interceptação: %f\n", raio_interc);
 	// calcular todas as distancias possíveis
 	for(i = LINHA_INIC + 1; i <= NUM_LINHAS; i++) // linha inicial + endereço da posição inicial
 	{
@@ -217,7 +219,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 			distancia = 0.033f;
 			accel = -1;
 		}else if(soma_tempos > (temp_accel+temp_desac)){
-			distancia = 0.02f;
+			distancia = 0.069060751f;
 			accel = 0;
 		}
     // definição do angulo
@@ -228,10 +230,10 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 
 	 	definicVelRobo(Rob, Bol, i, distancia, accel, v);
 
-
 		if(distanciaRoboBola(Rob->x[i], Bol->x[i], Rob->y[i], Bol->y[i]) <= raio_interc)
 			break;
 	}
+	printf("Retorno: %d\n", i);
 	return i;
 }
 
