@@ -54,6 +54,13 @@ void definicaoPosRobo(elementos *r, short int v)
 
 }
 
+void definicaoVelFinalRobo(double* deltaT, double* distIteracao, float porcentagem){
+	double velFinal = 1.055831105 * (1+porcentagem);
+	*deltaT = (vel_robo - velFinal)/desa_max;
+	double distTotal = (((vel_robo - velFinal) * *deltaT) / 2) + (velFinal * *deltaT);
+	*distIteracao = ((distTotal * 0.02) / *deltaT);
+}
+
 void definicaoDirRobo(int* mpx, int* mpy,
 	              double robo_x0, double robo_y0,
 		      double bola_x0, double bola_y0,
@@ -104,7 +111,6 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, double dist, int acce
 	else
 		Rob->vel.mod[i] = 1.0;
 
-	//printf("%d, %lf\n", accel, Rob->vel.mod[i-1]);
 	if ( v != 0)
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 
@@ -124,7 +130,6 @@ float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, i
 		else //Robô na mesma posição Y que a bola
 			return 0;
 
-    //printf("Angulo: %lf\n", angulo * (180/PI));
   	if(v != 0)
   		logar("definicao angulo", "angulo", "", angulo * (180/PI), 0);
       return angulo; //converte de radianos para graus
@@ -186,23 +191,20 @@ void atualizaPosicao(elementos* Rob, double componenteX, double componenteY, int
 }
 
 double distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
-	printf("%lf\n", sqrt(pow((robX-bolaX), 2) + pow((robY-bolaY), 2)));
 	return sqrt(pow((robX-bolaX), 2) + pow((robY-bolaY), 2));
 }
 
 
-int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y, float raio_interc, float vel_max, short int v )
+int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y, float raio_interc, float vel_max, double temp_desac, double distDesac, short int v)
 {
 	double angulo_temp	= 0.0;
 	double rob_xf, rob_yf;
 	double soma_tempos	= 0.0;
 	double componenteX, componenteY, distancia;
 	double temp_accel 	= 0.575f;
-	double temp_desac 	= 0.4924242424f;
 	int i, accel;
 
 	distancia 		= 0.023f;
-	printf("Raio de interceptação: %f\n", raio_interc);
 	// calcular todas as distancias possíveis
 	for(i = LINHA_INIC + 1; i <= NUM_LINHAS; i++) // linha inicial + endereço da posição inicial
 	{
@@ -219,7 +221,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 			distancia = 0.033f;
 			accel = -1;
 		}else if(soma_tempos > (temp_accel+temp_desac)){
-			distancia = 0.069060751f;
+			distancia = distDesac;
 			accel = 0;
 		}
     // definição do angulo
@@ -233,7 +235,6 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		if(distanciaRoboBola(Rob->x[i], Bol->x[i], Rob->y[i], Bol->y[i]) <= raio_interc)
 			break;
 	}
-	printf("Retorno: %d\n", i);
 	return i;
 }
 
@@ -245,6 +246,9 @@ int main (int argc, char * argv[])
 	robo.vel.x[2] 		 = 0.0;
 	robo.vel.y[2] 		 = 0.0;
 	short int verboso 	= 0;
+	double temp_desac;
+	double distIteracao;
+	float porcentagem = 0.05;
 	if(argc == 2){
 		if(!(strcmp(argv[1], "-v")))
 				verboso = 1;
@@ -255,6 +259,8 @@ int main (int argc, char * argv[])
 	int i, pontoDeEncontro;
 	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce; // bola sob o domínio do robo
 
+	definicaoVelFinalRobo(&temp_desac, &distIteracao, porcentagem);
+
 	if(verboso != 0)
 		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
@@ -263,7 +269,7 @@ int main (int argc, char * argv[])
 	// definiçao das posições iniciais do robo (vetor no indice 2)
 	definicaoPosRobo(&robo, verboso);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
-	pontoDeEncontro = definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo, verboso);
+	pontoDeEncontro = definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo, temp_desac, distIteracao, verboso);
 
 	// última função antes da finalização do programa
 	plotGraficos(&bola, &robo, NUM_LINHAS, pontoDeEncontro, robo.diam, bola.diam);
