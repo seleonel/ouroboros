@@ -102,6 +102,12 @@ void salvarCoordenadas(elementos *Bola, elementos *Robo, int numlinhas, int pont
   for(i = 2; i <= pontoDeEncontro; i++) // aceleração da bola Y em função do tempo
     fprintf(coordenadas, "%lf %lf\n", Bola->tempo[i], Bola->acc.y[i]);
   fclose(coordenadas);
+
+  //Distância relativa
+  coordenadas = fopen("../recursos/coordenadas/distRelativa.txt", "w");
+  for(i = 3; i <= pontoDeEncontro; i++) // aceleração da bola Y em função do tempo
+    fprintf(coordenadas, "%lf %lf\n", Bola->tempo[i], dist_relativa[i]);
+  fclose(coordenadas);
 }
 
 void plotGraficos(elementos *Bola, elementos *Robo, int numlinhas, int pontoDeEncontro, float diametroRobo, float diametroBola)
@@ -115,6 +121,7 @@ void plotGraficos(elementos *Bola, elementos *Robo, int numlinhas, int pontoDeEn
   system("gnuplot ../recursos/scripts/script5.gnu");
   system("gnuplot ../recursos/scripts/script6.gnu");
   system("gnuplot ../recursos/scripts/script7.gnu");
+  system("gnuplot ../recursos/scripts/script8.gnu");
 
 }
 
