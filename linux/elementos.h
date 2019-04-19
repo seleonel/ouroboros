@@ -10,13 +10,19 @@ typedef struct
     double	x[400];
     double	y[400];
 } velocidades;
-
+typedef struct
+{
+	double mod[400];
+	double x[400];
+	double y[400];
+} aceler;
 typedef struct
 {
     double 	tempo[400];
     double    	x[400] ;
     double    	y[400] ;
     double    	distancia[400];
+    aceler	acc;
     velocidades vel;
    float 	diam;
 }elementos;

@@ -54,11 +54,12 @@ void definicaoPosRobo(elementos *r, short int v)
 
 }
 
-void definicaoVelFinalRobo(double* deltaT, double* distIteracao, float porcentagem){
+double definicaoVelFinalRobo(double* deltaT, double* distIteracao, float porcentagem){
 	double velFinal = 1.055831105 * (1+porcentagem);
 	*deltaT = (vel_robo - velFinal)/desa_max;
 	double distTotal = (((vel_robo - velFinal) * *deltaT) / 2) + (velFinal * *deltaT);
 	*distIteracao = ((distTotal * 0.02) / *deltaT);
+	return velFinal;
 }
 
 void definicaoDirRobo(int* mpx, int* mpy,
@@ -100,17 +101,26 @@ void definicaoDirRobo(int* mpx, int* mpy,
 }
 
 
-
-void definicVelRobo(elementos *Rob, elementos *Bol, int i, double dist, int accel, short int v  )
+void definicAccelRobo(elementos *Robo, int i)
+{
+	Robo->acc.x[i] = Robo->vel.x[i] / 0.02;
+	Robo->acc.y[i] = Robo->vel.y[i] / 0.02;
+	
+}
+void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double comp_y, int accel, short int v  , double vel_f)
 {
 
-	if(accel == 1)
+	if(accel == 1){
 		Rob->vel.mod[i] = Rob->vel.mod[i-1] + (a_max * 0.02f);
-	else if(accel == -1)
+	}else if(accel == -1){
 		Rob->vel.mod[i] = Rob->vel.mod[i-1] - (desa_max * 0.02f);
-	else
-		Rob->vel.mod[i] = 1.0;
-
+	}else{
+		Rob->vel.mod[i] = vel_f;
+	}
+	
+	Rob->vel.x[i] 	= comp_x / 0.02; 
+	Rob->vel.y[i] 	= comp_y/ 0.02;
+	definicAccelRobo(Rob, i);
 	if ( v != 0)
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 
@@ -195,7 +205,7 @@ double distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
 }
 
 
-int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y, float raio_interc, float vel_max, double temp_desac, double distDesac, short int v)
+int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y, float raio_interc, float vel_max, double temp_desac, double distDesac, short int v, double vel_fin)
 {
 	double angulo_temp	= 0.0;
 	double rob_xf, rob_yf;
@@ -230,7 +240,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		defineComponentes(&componenteX, &componenteY, distancia, angulo_temp, versor_x, versor_y, v);
 		atualizaPosicao(Rob, componenteX, componenteY, i);
 
-	 	definicVelRobo(Rob, Bol, i, distancia, accel, v);
+	 	definicVelRobo(Rob, Bol, i, componenteX, componenteY, accel, v, vel_fin);
 
 		if(distanciaRoboBola(Rob->x[i], Bol->x[i], Rob->y[i], Bol->y[i]) <= raio_interc)
 			break;
@@ -259,7 +269,6 @@ int main (int argc, char * argv[])
 	int i, pontoDeEncontro;
 	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce; // bola sob o domínio do robo
 
-	definicaoVelFinalRobo(&temp_desac, &distIteracao, porcentagem);
 
 	if(verboso != 0)
 		fclose(fopen("../logs/log", "w"));
@@ -269,7 +278,7 @@ int main (int argc, char * argv[])
 	// definiçao das posições iniciais do robo (vetor no indice 2)
 	definicaoPosRobo(&robo, verboso);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
-	pontoDeEncontro = definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo, temp_desac, distIteracao, verboso);
+	pontoDeEncontro = definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo, temp_desac, distIteracao, verboso, definicaoVelFinalRobo(&temp_desac, &distIteracao, porcentagem));
 
 	// última função antes da finalização do programa
 	plotGraficos(&bola, &robo, NUM_LINHAS, pontoDeEncontro, robo.diam, bola.diam);
