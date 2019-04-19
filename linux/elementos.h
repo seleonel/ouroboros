@@ -32,4 +32,5 @@ const float dist_bounce = 0.0f;
 //float raio_bola = 0.046f;
 const float vel_robo = 2.3f; // 6,5 m/s como limite determinado pelo paper                                                        
 const float a_max = 4.0f;
+const float desa_max = 2.63f;
 #endif

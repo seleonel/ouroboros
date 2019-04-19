@@ -94,24 +94,19 @@ void definicaoDirRobo(int* mpx, int* mpy,
 
 
 
-void definicVelRobo(elementos *Rob, elementos *Bol, int i, float comp_x, float comp_y,  int versor_x, int versor_y )
+void definicVelRobo(elementos *Rob, elementos *Bol, int i, double dist, int accel, short int v  )
 {
-	double  velocidade_x	= 0.0;
-	double  velocidade_y	= 0.0;
-	double  modulo_vel	= 0.0;
-	double	accel		= 0.0;
-	double  delta_x		= Rob->x[i] - Rob->x[i-1];
-	double  delta_y		= Rob->y[i] - Rob->y[i-1];
-	float desa_max = 2.64f;
-	if(Rob->vel.mod[i-1] <= 2.3)
-		accel		= a_max;
-	else
-		accel		= desa_max;
 
-	velocidade_x 	= (Rob->vel.x[i-1] + (2 * accel * delta_x)) * versor_x;
-	velocidade_y 	= (Rob->vel.y[i-1] + (2 * accel * delta_y)) * versor_y ;
-	modulo_vel 	= sqrt(pow(velocidade_x, 2) + pow(velocidade_y, 2));
+	if(accel == 1)
+		Rob->vel.mod[i] = Rob->vel.mod[i-1] + (a_max * 0.2f);
+	else if(accel == -1)
+		Rob->vel.mod[i] = Rob->vel.mod[i-1] - (desa_max * 0.2f);
+	else 
+		Rob->vel.mod[i] = 1.0;
 
+	printf("%d, %lf\n", accel, Rob->vel.mod[i-1]);
+	if ( v != 0)
+		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 
 }
 
@@ -200,11 +195,11 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 	double rob_xf, rob_yf;
 	double soma_tempos	= 0.0;
 	double componenteX, componenteY, distancia;
-	float temp_accel = 0.575f;
-	float temp_desac = 0.4924242424f;
-	int i;
+	double temp_accel 	= 0.575;
+	double temp_desac 	= 0.4924242424;
+	int i, accel;
 
-	distancia = 0.023f;
+	distancia 		= 0.023f;
 	// calcular todas as distancias possíveis
 	for(i = LINHA_INIC + 1; i <= NUM_LINHAS; i++) // linha inicial + endereço da posição inicial
 	{
@@ -213,21 +208,24 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		Rob->tempo[i] = Bol->tempo[i];
 		soma_tempos += Bol->tempo[i];
 
+		accel 	= 1;
 		definicaoDirRobo(versor_x, versor_y, Rob->x[i-1], Rob->y[i-1], Bol->x[i-1], Bol->y[i-1], v);
 
-		if(soma_tempos >= temp_accel && soma_tempos <= (temp_accel + temp_desac))
+		if(soma_tempos >= temp_accel && soma_tempos <= (temp_accel + temp_desac)){
 		// definicao do modulo
 			distancia = 0.033f;
-		else
+			accel = -1;
+		}else if(soma_tempos > (temp_accel+temp_desac)){		
 			distancia = 0.02f;
-
+			accel = 0;
+		}
     // definição do angulo
     angulo_temp = definicAngul(Rob->x[i-1], rob_xf, Rob->y[i-1], rob_yf, versor_x, versor_y, v );
 		//define componentes
 		defineComponentes(&componenteX, &componenteY, distancia, angulo_temp, versor_x, versor_y, v);
 		atualizaPosicao(Rob, componenteX, componenteY, i);
 
-//	 	definicVelRobo(Rob, Bol, i, componenteX, componenteY, versor_x, versor_y);
+	 	definicVelRobo(Rob, Bol, i, distancia, accel, v);
 
 
 		if(distanciaRoboBola(Rob->x[i], Bol->x[i], Rob->y[i], Bol->y[i]) <= raio_interc)
