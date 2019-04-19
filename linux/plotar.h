@@ -42,6 +42,16 @@ void salvarCoordenadas(elementos *Bola, elementos *Robo, int numlinhas, int pont
   for(i = 2; i <= pontoDeEncontro; i++) // posição da bola Y em função do tempo
     fprintf(coordenadas, "%lf %lf\n", Bola->tempo[i], Bola->y[i]);
   fclose(coordenadas);
+
+  coordenadas = fopen("../recursos/coordenadas/xRoboPorTempo.txt", "w");
+  for(i = 2; i <= pontoDeEncontro; i++) // posição da bola X em função do tempo
+    fprintf(coordenadas, "%f %lf\n", Robo->tempo[i], Robo->x[i]);
+  fclose(coordenadas);
+
+  coordenadas = fopen("../recursos/coordenadas/yRoboPorTempo.txt", "w");
+  for(i = 2; i <= pontoDeEncontro; i++) // posição da bola Y em função do tempo
+    fprintf(coordenadas, "%lf %lf\n", Robo->tempo[i], Robo->y[i]);
+  fclose(coordenadas);
 }
 
 void plotGraficos(elementos *Bola, elementos *Robo, int numlinhas, int pontoDeEncontro, float diametroRobo, float diametroBola)

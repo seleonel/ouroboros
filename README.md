@@ -12,12 +12,15 @@
 <br>
 <ul>
 	<li>Proporções do campo: 9m x 6m;</li>
-	<li>Peso da bola: 0,046kg;</li>
 	<li>Diâmetro da bola: 0,043m;</li>
 	<li>Diâmetro máximo do robô: 0,18m;</li>
-	<li>Velocidade máxima da bola: 6,5m/s. </li>
+	<li>Velocidade máxima da bola: 6,5m/s; </li>
+	<li>Velocidade máxima do Robô: 2,3 m/s; </li>
+	<li>Aceleração média do Robô: 4 m/s²; </li>
+	<li>Desaceleração média do Robô: 2,64 m/s². </li>
+
 </ul>
-<p>Informações retiradas de  <a href="https://ssl.robocup.org/rules/">RoboCup</a>.</p>
+<p>Informações retiradas de  <a href="https://ssl.robocup.org/rules/">RoboCup</a> e <a href="https://fei.edu.br/robofei/ics/IC-Rodrigues-2015.pdf">Iniciação FEI - Fernando Rodrigues Junior</a>.</p>
 <br>
 <h3> <b>  Trajetória da bola</b> </h3>
 <br>
@@ -27,11 +30,11 @@
 <br>
 <ol>
 	<p style="text-align: center;"><b>Cousas (ordem de relevância) </b></p>
-	<li> Elaborar Cronograma  </li>
-	<li> Definir velocidade máxima e aceleração máxima do robô </li>
-	<li> Definir estrutura do programa </li>
-	<li> Definir funções para recebimento de dados (pipes ou system)</li>
+	<li> <s>Elaborar Cronograma</s>  </li>
+	<li> <s>Definir velocidade máxima e aceleração máxima do robô</s> </li>
+	<li> <s>Definir estrutura do programa</s> </li>
+	<li> <s>Definir funções para recebimento de dados (pipes ou system)</s> </li>
 	<li> Definir funções para cálculo de velocidade média e instantânea </li>
-	<li> Definir funções para plotagem de gráfico (gnuplot/biblioteca/QT)</li>
+	<li> <s>Definir funções para plotagem de gráfico (gnuplot/biblioteca/QT)</s></li>
 	<li> <b> OPCIONAL </b> Incluir engine de jogo (SDL2) </li>
 </ol>
