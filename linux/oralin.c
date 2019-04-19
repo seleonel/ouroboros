@@ -238,29 +238,24 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 
 int main (int argc, char * argv[])
 {
-	FILE * log = fopen("../logs/log", "w");
-	fclose(log);
 	elementos bola, robo;
 	robo.diam		 = 0.180f;
 	bola.diam	 	 = 0.046f;
 	robo.vel.x[2] 		 = 0.0;
 	robo.vel.y[2] 		 = 0.0;
 	short int verboso 	= 0;
-	if(argc > 3)
-	{
-		puts("O programa apenas recebe um argumento");
-		return 0;
-	}
-	if(!(strcmp(argv[1], "-e")) || !(strcmp(argv[1], "-v")))
-		verboso = 1;
+	if(argc == 2){
+		if(!(strcmp(argv[1], "-v")))
+				verboso = 1;
+				}
 	else
-		printf("Argumento %s não reconhecido\n", argv[1]);
+		puts("Argumentos não reconhecidos, utilize \"-v\" para logs.");
 
-	// para for loops
 	int i, pontoDeEncontro;
 	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce; // bola sob o domínio do robo
 
-	// zero os vetores da bola e robo
+	if(verboso != 0)
+		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
 
