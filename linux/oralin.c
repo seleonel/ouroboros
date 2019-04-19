@@ -121,10 +121,11 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double
 	Rob->vel.x[i] 	= comp_x / 0.02; 
 	Rob->vel.y[i] 	= comp_y/ 0.02;
 	definicAccelRobo(Rob, i);
-	if ( v != 0)
+	if ( v != 0){
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 
-}
+		logar("Velocidade componentes", "VX", "VY", Rob->vel.x[i], Rob->vel.y[i]);
+	}}
 
 
 float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, int* vers_x, int* vers_y, short int v)
