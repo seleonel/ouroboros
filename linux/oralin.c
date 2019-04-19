@@ -98,13 +98,13 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, double dist, int acce
 {
 
 	if(accel == 1)
-		Rob->vel.mod[i] = Rob->vel.mod[i-1] + (a_max * 0.2f);
+		Rob->vel.mod[i] = Rob->vel.mod[i-1] + (a_max * 0.02f);
 	else if(accel == -1)
-		Rob->vel.mod[i] = Rob->vel.mod[i-1] - (desa_max * 0.2f);
-	else 
+		Rob->vel.mod[i] = Rob->vel.mod[i-1] - (desa_max * 0.02f);
+	else
 		Rob->vel.mod[i] = 1.0;
 
-	printf("%d, %lf\n", accel, Rob->vel.mod[i-1]);
+	//printf("%d, %lf\n", accel, Rob->vel.mod[i-1]);
 	if ( v != 0)
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 
@@ -118,26 +118,28 @@ float definicAngul(double rob_x0, double rob_xf, double rob_y0, double rob_yf, i
     // considerar y positivo
 
 		if(*vers_y < 0) //Robô acima da bola
-			angulo = atan2(fabs(rob_xf - rob_x0), fabs(rob_yf - rob_y0));
+			angulo = atan2((rob_xf - rob_x0), (rob_yf - rob_y0));
 		else if(*vers_y > 0) //Robô abaixo da bola
-			angulo = atan2(fabs(rob_yf - rob_y0), fabs(rob_xf - rob_x0));
+			angulo = atan2((rob_yf - rob_y0), (rob_xf - rob_x0));
 		else //Robô na mesma posição Y que a bola
 			return 0;
-	if(v != 0)
-		logar("definicao angulo", "angulo", "", angulo * (180/PI), 0);
-    return angulo * (180/PI); //converte de radianos para graus
+
+    //printf("Angulo: %lf\n", angulo * (180/PI));
+  	if(v != 0)
+  		logar("definicao angulo", "angulo", "", angulo * (180/PI), 0);
+      return angulo; //converte de radianos para graus
 }
 
-void defineComponentes(double* componenteX, double* componenteY, float modulo, float angulo, int* vers_x, int* vers_y, short int v) {
+void defineComponentes(double* componenteX, double* componenteY, double modulo, float angulo, int* vers_x, int* vers_y, short int v) {
 
 	if(*vers_x > 0){ //Robô anda pra direita
 		if(*vers_y < 0) { //Robô anda pra baixo
-			*componenteX = sin(angulo) * modulo;
-			*componenteY = (cos(angulo) * modulo) * -1;
+			*componenteX = (sin(angulo) * modulo);
+			*componenteY = (cos(angulo) * modulo);
 		}
 		else if(*vers_y > 0) { //Robô anda pra cima
-			*componenteX = cos(angulo) * modulo;
-			*componenteY = sin(angulo) * modulo;
+			*componenteX = (cos(angulo) * modulo);
+			*componenteY = (sin(angulo) * modulo);
 		}
 		else{ // Y do Robô igual ao da bola
 			*componenteX = modulo;
@@ -146,12 +148,12 @@ void defineComponentes(double* componenteX, double* componenteY, float modulo, f
 	}
 	else if(*vers_x < 0){ //Robô anda pra esquerda
 		if(*vers_y < 0) { //Robô anda pra baixo
-			*componenteX = (sin(angulo) * modulo) * -1;
-			*componenteY = (cos(angulo) * modulo) * -1;
+			*componenteX = (sin(angulo) * modulo);
+			*componenteY = (cos(angulo) * modulo);
 		}
 		else if(*vers_y > 0) { //Robô anda pra cima
-			*componenteX = (cos(angulo) * modulo) * -1;
-			*componenteY = sin(angulo) * modulo;
+			*componenteX = (cos(angulo) * modulo);
+			*componenteY = (sin(angulo) * modulo);
 		}
 		else{ // Y do Robô igual ao da bola
 			*componenteX = modulo * -1;
@@ -172,6 +174,7 @@ void defineComponentes(double* componenteX, double* componenteY, float modulo, f
 			*componenteY = 0;
 		}
 	}
+
 	if (v != 0)
 		logar("definicao componentes", "componente x", "componente y",*componenteX, *componenteY);
 }
@@ -182,21 +185,19 @@ void atualizaPosicao(elementos* Rob, double componenteX, double componenteY, int
 	Rob->y[i] = Rob->y[i-1] + componenteY;
 }
 
-float distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
+double distanciaRoboBola(double robX, double bolaX, double robY, double bolaY){
 	return sqrt(pow(fabs(robX-bolaX), 2) + pow(fabs(robY-bolaY), 2));
 }
 
 
 int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y, float raio_interc, float vel_max, short int v )
 {
-	double rob_x0 	 	= Rob->x[LINHA_INIC];
-	double rob_y0	 	= Rob->y[LINHA_INIC];
 	double angulo_temp	= 0.0;
 	double rob_xf, rob_yf;
 	double soma_tempos	= 0.0;
 	double componenteX, componenteY, distancia;
-	double temp_accel 	= 0.575;
-	double temp_desac 	= 0.4924242424;
+	double temp_accel 	= 0.575f;
+	double temp_desac 	= 0.4924242424f;
 	int i, accel;
 
 	distancia 		= 0.023f;
@@ -206,7 +207,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		rob_xf = Bol->x[i];
 		rob_yf = Bol->y[i];
 		Rob->tempo[i] = Bol->tempo[i];
-		soma_tempos += Bol->tempo[i];
+		soma_tempos = Bol->tempo[i];
 
 		accel 	= 1;
 		definicaoDirRobo(versor_x, versor_y, Rob->x[i-1], Rob->y[i-1], Bol->x[i-1], Bol->y[i-1], v);
@@ -215,7 +216,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		// definicao do modulo
 			distancia = 0.033f;
 			accel = -1;
-		}else if(soma_tempos > (temp_accel+temp_desac)){		
+		}else if(soma_tempos > (temp_accel+temp_desac)){
 			distancia = 0.02f;
 			accel = 0;
 		}
