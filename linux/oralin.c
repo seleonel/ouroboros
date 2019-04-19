@@ -115,7 +115,7 @@ void definicAccelBola(elementos *Bola, int i)
 
 }
 
-void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double comp_y, int accel, short int v  , double vel_f)
+void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double comp_y, int accel, short int v  , double vel_f, double angulo)
 {
 
 	if(accel == 1){
@@ -126,8 +126,8 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double
 		Rob->vel.mod[i] = vel_f;
 	}
 
-	Rob->vel.x[i] 	= comp_x / 0.02;
-	Rob->vel.y[i] 	= comp_y/ 0.02;
+	Rob->vel.x[i] 	= Rob->vel.mod[i] * cos(angulo);
+	Rob->vel.y[i] 	= Rob->vel.mod[i] * sin(angulo);
 	definicAccelRobo(Rob, i);
 	if ( v != 0){
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
@@ -257,7 +257,7 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 		defineComponentes(&componenteX, &componenteY, distancia, angulo_temp, versor_x, versor_y, v);
 		atualizaPosicao(Rob, componenteX, componenteY, i);
 
-	 	definicVelRobo(Rob, Bol, i, componenteX, componenteY, accel, v, vel_fin);
+	 	definicVelRobo(Rob, Bol, i, componenteX, componenteY, accel, v, vel_fin, angulo_temp);
 		definicVelBola(Bol, i);
 
 		if(distanciaRoboBola(Rob->x[i], Bol->x[i], Rob->y[i], Bol->y[i]) <= raio_interc)
