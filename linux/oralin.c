@@ -38,7 +38,7 @@ void definicaoPosRobo(elementos *r, short int v)
 	double x0, y0;
 	int xCopiados, yCopiados;
 	//Primeiro contato com usuário, serão pedidas as coordenadas x e y iniciais
-	do
+	while(1)
 	{
 		puts("Insira um valor para X e Y iniciais para o robô\n");
 		char buffer[10];
@@ -50,14 +50,11 @@ void definicaoPosRobo(elementos *r, short int v)
 		xCopiados = sscanf(buffer, "%lf", &x0);
 		yCopiados = sscanf(buffer2, "%lf", &y0);
 
-		if (xCopiados < 1 || yCopiados < 1) {
-			puts("Coordenadas inválidas, insira novamente");
+		if (xCopiados >= 1 && yCopiados >= 1 && x0 >= 0 && x0 <= 9 && y0 >= 0 && y0 <= 6) {
+			break;
 		}
-		else if (x0 < 0 || x0 > 9 || y0 < 0 || y0 > 6){
-			puts("Coordenadas inválidas, insira novamente");
-		}
+		puts("Coordenadas inválidas, insira novamente");
 	}
-	while(xCopiados < 1 || yCopiados < 1 || x0 < 0 || x0 > 9 || y0 < 0 || y0 > 6);
 
 	r->x[LINHA_INIC] = x0;
 	r->y[LINHA_INIC] = y0;
@@ -113,10 +110,23 @@ void definicaoDirRobo(int* mpx, int* mpy, double robo_x0, double robo_y0, double
 		logar("direcao", "Versor X", "Versor Y", *mpx, *mpy);
 }
 
-void definicAccelRobo(elementos *Robo, int i)
+void definicAccelRobo(elementos *Robo, int i, short int v, double comp_x, double comp_y, double angulo)
 {
-	Robo->acc.x[i] = (Robo->vel.x[i] - Robo->vel.x[i-1]) / TEMPO_ITERACAO;
-	Robo->acc.y[i] = (Robo->vel.y[i] - Robo->vel.y[i-1]) / TEMPO_ITERACAO;
+	Robo->acc.mod[i] = (Robo->vel.mod[i] - Robo->vel.mod[i-1]) / TEMPO_ITERACAO;
+	
+	if(comp_y > 0){
+		Robo->acc.x[i] = Robo->acc.mod[i] * cos(angulo);
+		Robo->acc.y[i] = Robo->acc.mod[i] * sin(angulo);
+	}
+	else if(comp_y < 0){
+		Robo->acc.x[i] = Robo->acc.mod[i] * sin(angulo);
+		Robo->acc.y[i] = Robo->acc.mod[i] * cos(angulo);
+	}
+
+	if ( v != 0){
+		logar("Aceleração", "Modulo aceleração", "", Robo->acc.mod[i], 0);
+		logar("Aceleração componentes", "AX", "AY", Robo->acc.x[i], Robo->acc.y[i]);
+	}
 }
 
 void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double comp_y, int accel, short int v  , double vel_f, double angulo)
@@ -139,11 +149,11 @@ void definicVelRobo(elementos *Rob, elementos *Bol, int i, double comp_x, double
 		Rob->vel.y[i] = Rob->vel.mod[i] * cos(angulo);
 	}
 
-	definicAccelRobo(Rob, i);
 	if ( v != 0){
 		logar("Velocidade", "Modulo velocidade", "", Rob->vel.mod[i], 0);
 		logar("Velocidade componentes", "VX", "VY", Rob->vel.x[i], Rob->vel.y[i]);
 	}
+	definicAccelRobo(Rob, i, v, comp_x, comp_y, angulo);
 }
 
 void definicAccelBola(elementos *Bola, int i)
