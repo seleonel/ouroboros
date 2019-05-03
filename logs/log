@@ -1,0 +1,1110 @@
+Secao: posicao robo
+X0: 3.000000	Y0: 4.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.748366	: 0.000000
+Secao: definicao componentes
+componente x: -0.011412	componente y: -0.019969
+Secao: Velocidade
+Modulo velocidade: 0.080000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.039695	VY: 0.069457
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.984767	AY: 3.472852
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.751795	: 0.000000
+Secao: definicao componentes
+componente x: -0.011414	componente y: -0.019968
+Secao: Velocidade
+Modulo velocidade: 0.160000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.079399	VY: 0.138909
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.984975	AY: 3.472733
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.755152	: 0.000000
+Secao: definicao componentes
+componente x: -0.011415	componente y: -0.019968
+Secao: Velocidade
+Modulo velocidade: 0.240000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.119111	VY: 0.208357
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.985178	AY: 3.472617
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.758441	: 0.000000
+Secao: definicao componentes
+componente x: -0.011416	componente y: -0.019967
+Secao: Velocidade
+Modulo velocidade: 0.320000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.158830	VY: 0.277800
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.985378	AY: 3.472503
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.761655	: 0.000000
+Secao: definicao componentes
+componente x: -0.011417	componente y: -0.019966
+Secao: Velocidade
+Modulo velocidade: 0.400000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.198557	VY: 0.347239
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.985572	AY: 3.472391
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.764786	: 0.000000
+Secao: definicao componentes
+componente x: -0.011418	componente y: -0.019966
+Secao: Velocidade
+Modulo velocidade: 0.480000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.238291	VY: 0.416674
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.985762	AY: 3.472283
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.767829	: 0.000000
+Secao: definicao componentes
+componente x: -0.011419	componente y: -0.019965
+Secao: Velocidade
+Modulo velocidade: 0.560000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.278033	VY: 0.486105
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.985947	AY: 3.472177
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.770780	: 0.000000
+Secao: definicao componentes
+componente x: -0.011420	componente y: -0.019964
+Secao: Velocidade
+Modulo velocidade: 0.640000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.317780	VY: 0.555532
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986125	AY: 3.472075
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.773631	: 0.000000
+Secao: definicao componentes
+componente x: -0.011421	componente y: -0.019964
+Secao: Velocidade
+Modulo velocidade: 0.720000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.357534	VY: 0.624956
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986298	AY: 3.471976
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.776380	: 0.000000
+Secao: definicao componentes
+componente x: -0.011422	componente y: -0.019963
+Secao: Velocidade
+Modulo velocidade: 0.800000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.397293	VY: 0.694376
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986465	AY: 3.471881
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.779013	: 0.000000
+Secao: definicao componentes
+componente x: -0.011423	componente y: -0.019963
+Secao: Velocidade
+Modulo velocidade: 0.880000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.437057	VY: 0.763794
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986624	AY: 3.471790
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.781530	: 0.000000
+Secao: definicao componentes
+componente x: -0.011424	componente y: -0.019962
+Secao: Velocidade
+Modulo velocidade: 0.960000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.476826	VY: 0.833209
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986777	AY: 3.471702
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.783924	: 0.000000
+Secao: definicao componentes
+componente x: -0.011425	componente y: -0.019962
+Secao: Velocidade
+Modulo velocidade: 1.040000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.516600	VY: 0.902621
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.986922	AY: 3.471619
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.786182	: 0.000000
+Secao: definicao componentes
+componente x: -0.011426	componente y: -0.019961
+Secao: Velocidade
+Modulo velocidade: 1.120000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.556376	VY: 0.972031
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987059	AY: 3.471541
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.788299	: 0.000000
+Secao: definicao componentes
+componente x: -0.011426	componente y: -0.019961
+Secao: Velocidade
+Modulo velocidade: 1.200000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.596156	VY: 1.041440
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987187	AY: 3.471468
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.790270	: 0.000000
+Secao: definicao componentes
+componente x: -0.011427	componente y: -0.019961
+Secao: Velocidade
+Modulo velocidade: 1.280000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.635938	VY: 1.110848
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987306	AY: 3.471399
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.792083	: 0.000000
+Secao: definicao componentes
+componente x: -0.011428	componente y: -0.019960
+Secao: Velocidade
+Modulo velocidade: 1.360000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.675721	VY: 1.180254
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987416	AY: 3.471336
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.793729	: 0.000000
+Secao: definicao componentes
+componente x: -0.011428	componente y: -0.019960
+Secao: Velocidade
+Modulo velocidade: 1.440000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.715506	VY: 1.249661
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987516	AY: 3.471279
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.795198	: 0.000000
+Secao: definicao componentes
+componente x: -0.011429	componente y: -0.019960
+Secao: Velocidade
+Modulo velocidade: 1.520000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.755290	VY: 1.319067
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987605	AY: 3.471228
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.796485	: 0.000000
+Secao: definicao componentes
+componente x: -0.011429	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 1.600000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.795073	VY: 1.388473
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987683	AY: 3.471184
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.797578	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 1.680000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.834855	VY: 1.457881
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987749	AY: 3.471146
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.798462	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 1.760000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.874633	VY: 1.527291
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987803	AY: 3.471115
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.799132	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 1.840000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.914408	VY: 1.596702
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987843	AY: 3.471092
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.799572	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 1.920000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.954178	VY: 1.666117
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987870	AY: 3.471077
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.799774	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 2.000000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.993941	VY: 1.735535
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987882	AY: 3.471070
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.799723	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 2.080000	: 0.000000
+Secao: Velocidade componentes
+VX: 1.033697	VY: 1.804957
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987879	AY: 3.471071
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.799402	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 2.160000	: 0.000000
+Secao: Velocidade componentes
+VX: 1.073444	VY: 1.874385
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987860	AY: 3.471083
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.798801	: 0.000000
+Secao: definicao componentes
+componente x: -0.011430	componente y: -0.019959
+Secao: Velocidade
+Modulo velocidade: 2.240000	: 0.000000
+Secao: Velocidade componentes
+VX: 1.113181	VY: 1.943818
+Secao: Aceleração
+Modulo aceleração: 4.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 1.987823	AY: 3.471103
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.797906	: 0.000000
+Secao: definicao componentes
+componente x: -0.016399	componente y: -0.028637
+Secao: Velocidade
+Modulo velocidade: 2.187400	: 0.000000
+Secao: Velocidade componentes
+VX: 1.087011	VY: 1.898190
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306958	AY: -2.282271
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.796690	: 0.000000
+Secao: definicao componentes
+componente x: -0.016398	componente y: -0.028637
+Secao: Velocidade
+Modulo velocidade: 2.134800	: 0.000000
+Secao: Velocidade componentes
+VX: 1.060833	VY: 1.852567
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306910	AY: -2.282299
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.795143	: 0.000000
+Secao: definicao componentes
+componente x: -0.016398	componente y: -0.028638
+Secao: Velocidade
+Modulo velocidade: 2.082200	: 0.000000
+Secao: Velocidade componentes
+VX: 1.034646	VY: 1.806949
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306848	AY: -2.282334
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.793237	: 0.000000
+Secao: definicao componentes
+componente x: -0.016397	componente y: -0.028638
+Secao: Velocidade
+Modulo velocidade: 2.029600	: 0.000000
+Secao: Velocidade componentes
+VX: 1.008450	VY: 1.761336
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306772	AY: -2.282377
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.790953	: 0.000000
+Secao: definicao componentes
+componente x: -0.016396	componente y: -0.028639
+Secao: Velocidade
+Modulo velocidade: 1.977000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.982247	VY: 1.715727
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306681	AY: -2.282430
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.788268	: 0.000000
+Secao: definicao componentes
+componente x: -0.016394	componente y: -0.028640
+Secao: Velocidade
+Modulo velocidade: 1.924400	: 0.000000
+Secao: Velocidade componentes
+VX: 0.956035	VY: 1.670124
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306574	AY: -2.282491
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.785154	: 0.000000
+Secao: definicao componentes
+componente x: -0.016393	componente y: -0.028641
+Secao: Velocidade
+Modulo velocidade: 1.871800	: 0.000000
+Secao: Velocidade componentes
+VX: 0.929815	VY: 1.624524
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306450	AY: -2.282562
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.781588	: 0.000000
+Secao: definicao componentes
+componente x: -0.016391	componente y: -0.028642
+Secao: Velocidade
+Modulo velocidade: 1.819200	: 0.000000
+Secao: Velocidade componentes
+VX: 0.903588	VY: 1.578929
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306308	AY: -2.282643
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.777535	: 0.000000
+Secao: definicao componentes
+componente x: -0.016389	componente y: -0.028643
+Secao: Velocidade
+Modulo velocidade: 1.766600	: 0.000000
+Secao: Velocidade componentes
+VX: 0.877353	VY: 1.533339
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.306147	AY: -2.282736
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.772969	: 0.000000
+Secao: definicao componentes
+componente x: -0.016387	componente y: -0.028644
+Secao: Velocidade
+Modulo velocidade: 1.714000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.851112	VY: 1.487752
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.305965	AY: -2.282840
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.767853	: 0.000000
+Secao: definicao componentes
+componente x: -0.016384	componente y: -0.028645
+Secao: Velocidade
+Modulo velocidade: 1.661400	: 0.000000
+Secao: Velocidade componentes
+VX: 0.824863	VY: 1.442169
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.305761	AY: -2.282956
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.762150	: 0.000000
+Secao: definicao componentes
+componente x: -0.016381	componente y: -0.028647
+Secao: Velocidade
+Modulo velocidade: 1.608800	: 0.000000
+Secao: Velocidade componentes
+VX: 0.798609	VY: 1.396589
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.305534	AY: -2.283086
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.755822	: 0.000000
+Secao: definicao componentes
+componente x: -0.016378	componente y: -0.028649
+Secao: Velocidade
+Modulo velocidade: 1.556200	: 0.000000
+Secao: Velocidade componentes
+VX: 0.772349	VY: 1.351012
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.305281	AY: -2.283230
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.748824	: 0.000000
+Secao: definicao componentes
+componente x: -0.016375	componente y: -0.028651
+Secao: Velocidade
+Modulo velocidade: 1.503600	: 0.000000
+Secao: Velocidade componentes
+VX: 0.746084	VY: 1.305439
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.305003	AY: -2.283390
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.741113	: 0.000000
+Secao: definicao componentes
+componente x: -0.016371	componente y: -0.028653
+Secao: Velocidade
+Modulo velocidade: 1.451000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.719815	VY: 1.259868
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.304695	AY: -2.283565
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.732630	: 0.000000
+Secao: definicao componentes
+componente x: -0.016366	componente y: -0.028656
+Secao: Velocidade
+Modulo velocidade: 1.398400	: 0.000000
+Secao: Velocidade componentes
+VX: 0.693541	VY: 1.214299
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.304357	AY: -2.283758
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.723327	: 0.000000
+Secao: definicao componentes
+componente x: -0.016362	componente y: -0.028658
+Secao: Velocidade
+Modulo velocidade: 1.345800	: 0.000000
+Secao: Velocidade componentes
+VX: 0.667264	VY: 1.168733
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.303986	AY: -2.283970
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.713140	: 0.000000
+Secao: definicao componentes
+componente x: -0.016357	componente y: -0.028661
+Secao: Velocidade
+Modulo velocidade: 1.293200	: 0.000000
+Secao: Velocidade componentes
+VX: 0.640985	VY: 1.123167
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.303580	AY: -2.284202
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.702000	: 0.000000
+Secao: definicao componentes
+componente x: -0.016351	componente y: -0.028664
+Secao: Velocidade
+Modulo velocidade: 1.240600	: 0.000000
+Secao: Velocidade componentes
+VX: 0.614704	VY: 1.077603
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.303136	AY: -2.284455
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.689835	: 0.000000
+Secao: definicao componentes
+componente x: -0.016345	componente y: -0.028668
+Secao: Velocidade
+Modulo velocidade: 1.188000	: 0.000000
+Secao: Velocidade componentes
+VX: 0.588422	VY: 1.032039
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.302651	AY: -2.284732
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.676564	: 0.000000
+Secao: definicao componentes
+componente x: -0.016338	componente y: -0.028672
+Secao: Velocidade
+Modulo velocidade: 1.135400	: 0.000000
+Secao: Velocidade componentes
+VX: 0.562140	VY: 0.986474
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.302122	AY: -2.285034
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.662098	: 0.000000
+Secao: definicao componentes
+componente x: -0.016331	componente y: -0.028676
+Secao: Velocidade
+Modulo velocidade: 1.082800	: 0.000000
+Secao: Velocidade componentes
+VX: 0.535860	VY: 0.940909
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.301545	AY: -2.285362
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.646334	: 0.000000
+Secao: definicao componentes
+componente x: -0.016323	componente y: -0.028680
+Secao: Velocidade
+Modulo velocidade: 1.030200	: 0.000000
+Secao: Velocidade componentes
+VX: 0.509583	VY: 0.895342
+Secao: Aceleração
+Modulo aceleração: -2.630000	: 0.000000
+Secao: Aceleração componentes
+AX: -1.300916	AY: -2.285720
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.629163	: 0.000000
+Secao: definicao componentes
+componente x: -0.016852	componente y: -0.029629
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.548086	VY: 0.963663
+Secao: Aceleração
+Modulo aceleração: 3.921133	: 0.000000
+Secao: Aceleração componentes
+AX: 1.938547	AY: 3.408419
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.610448	: 0.000000
+Secao: definicao componentes
+componente x: -0.016842	componente y: -0.029635
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.547771	VY: 0.963842
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.590043	: 0.000000
+Secao: definicao componentes
+componente x: -0.016831	componente y: -0.029641
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.547428	VY: 0.964037
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.567790	: 0.000000
+Secao: definicao componentes
+componente x: -0.016820	componente y: -0.029647
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.547053	VY: 0.964249
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.543502	: 0.000000
+Secao: definicao componentes
+componente x: -0.016807	componente y: -0.029654
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.546644	VY: 0.964481
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.516970	: 0.000000
+Secao: definicao componentes
+componente x: -0.016794	componente y: -0.029662
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.546198	VY: 0.964734
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.487962	: 0.000000
+Secao: definicao componentes
+componente x: -0.016779	componente y: -0.029671
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.545709	VY: 0.965011
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.456195	: 0.000000
+Secao: definicao componentes
+componente x: -0.016762	componente y: -0.029680
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.545174	VY: 0.965313
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.421351	: 0.000000
+Secao: definicao componentes
+componente x: -0.016744	componente y: -0.029690
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.544587	VY: 0.965644
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.383057	: 0.000000
+Secao: definicao componentes
+componente x: -0.016724	componente y: -0.029701
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.543941	VY: 0.966008
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.340877	: 0.000000
+Secao: definicao componentes
+componente x: -0.016702	componente y: -0.029714
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.543230	VY: 0.966408
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.294292	: 0.000000
+Secao: definicao componentes
+componente x: -0.016678	componente y: -0.029727
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.542444	VY: 0.966850
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.242676	: 0.000000
+Secao: definicao componentes
+componente x: -0.016651	componente y: -0.029742
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.541573	VY: 0.967338
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.185275	: 0.000000
+Secao: definicao componentes
+componente x: -0.016622	componente y: -0.029759
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.540604	VY: 0.967880
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.121177	: 0.000000
+Secao: definicao componentes
+componente x: -0.016588	componente y: -0.029777
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.539520	VY: 0.968484
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 29.049242	: 0.000000
+Secao: definicao componentes
+componente x: -0.016551	componente y: -0.029798
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.538304	VY: 0.969161
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.968034	: 0.000000
+Secao: definicao componentes
+componente x: -0.016509	componente y: -0.029822
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.536930	VY: 0.969923
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.875731	: 0.000000
+Secao: definicao componentes
+componente x: -0.016461	componente y: -0.029848
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.535367	VY: 0.970787
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.769955	: 0.000000
+Secao: definicao componentes
+componente x: -0.016405	componente y: -0.029879
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.533574	VY: 0.971773
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.647533	: 0.000000
+Secao: definicao componentes
+componente x: -0.016342	componente y: -0.029914
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.531496	VY: 0.972911
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.504130	: 0.000000
+Secao: definicao componentes
+componente x: -0.016267	componente y: -0.029954
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.529059	VY: 0.974238
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.333612	: 0.000000
+Secao: definicao componentes
+componente x: -0.016177	componente y: -0.030003
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.526157	VY: 0.975809
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 28.126956	: 0.000000
+Secao: definicao componentes
+componente x: -0.016069	componente y: -0.030061
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.522634	VY: 0.977700
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 27.870187	: 0.000000
+Secao: definicao componentes
+componente x: -0.015934	componente y: -0.030133
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.518248	VY: 0.980032
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 27.540180	: 0.000000
+Secao: definicao componentes
+componente x: -0.015760	componente y: -0.030224
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.512594	VY: 0.983001
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 27.095010	: 0.000000
+Secao: definicao componentes
+componente x: -0.015525	componente y: -0.030345
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.504941	VY: 0.986954
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 26.447838	: 0.000000
+Secao: definicao componentes
+componente x: -0.015181	componente y: -0.030519
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.493762	VY: 0.992594
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: direcao
+Versor X: -1.000000	Versor Y: -1.000000
+Secao: definicao angulo
+angulo: 25.375488	: 0.000000
+Secao: definicao componentes
+componente x: -0.014608	componente y: -0.030798
+Secao: Velocidade
+Modulo velocidade: 1.108623	: 0.000000
+Secao: Velocidade componentes
+VX: 0.475099	VY: 1.001661
+Secao: Aceleração
+Modulo aceleração: 0.000000	: 0.000000
+Secao: Aceleração componentes
+AX: 0.000000	AY: 0.000000
+Secao: Final programa
+erro?: 0.000000	: 0.000000

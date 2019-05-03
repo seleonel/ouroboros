@@ -306,12 +306,17 @@ int main (int argc, char * argv[])
 	robo.vel.x[2] = 0.0;
 	robo.vel.y[2] = 0.0;
 
-	if(argc == 2){
-		if(!(strcmp(argv[1], "-v")))
-				verboso = 1;
-				}
-	else
-		puts("Argumentos não reconhecidos, utilize \"-v\" para logs.");
+	switch(argc){
+		case 1:
+			break;
+		case 2:	
+			if(!(strcmp(argv[1], "-v"))) verboso = 1;
+				break;
+		default:	
+			puts("Argumentos nao inseridos ou reconhecidos");
+			break;
+
+}
 
 	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce;
 
