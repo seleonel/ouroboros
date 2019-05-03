@@ -34,7 +34,7 @@
 	<li> <s>Definir velocidade máxima e aceleração máxima do robô</s> </li>
 	<li> <s>Definir estrutura do programa</s> </li>
 	<li> <s>Definir funções para recebimento de dados (pipes ou system)</s> </li>
-	<li> Definir funções para cálculo de velocidade média e instantânea </li>
+	<li> <s>Definir funções para cálculo de velocidade média e instantânea</s> </li>
 	<li> <s>Definir funções para plotagem de gráfico (gnuplot/biblioteca/QT)</s></li>
 	<li> <b> OPCIONAL </b> Incluir engine de jogo (SDL2) </li>
 </ol>
