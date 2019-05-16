@@ -306,26 +306,20 @@ int main (int argc, char * argv[])
 	robo.vel.x[2] = 0.0;
 	robo.vel.y[2] = 0.0;
 
-	switch(argc){
-		case 1:
-			break;
-		case 2:	
-			if(!(strcmp(argv[1], "-v"))) verboso = 1;
-				break;
-		default:	
-			puts("Argumentos nao inseridos ou reconhecidos");
-			break;
-
-}
-
-	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce;
+		float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce;
 
 	if(verboso != 0)
 		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
 
-	definicaoPosRobo(&robo, verboso);
+	robo.x[LINHA_INIC] = strtol(argv[1],NULL, 10);
+	robo.y[LINHA_INIC] = strtol(argv[2],NULL, 10);
+
+	printf("%lf\n%lf\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
+
+
+	//definicaoPosRobo(&robo, verboso);
 	int controle = leitura(bola.tempo, bola.x, bola.y); // funcao leitura le cada linha do arquivo, erros são guardados em controle
 	pontoDeEncontro = definicMovRobo(&bola, &robo, &multipy, &multipx, raio_interc, vel_robo, temp_desac, distIteracao, verboso, definicaoVelFinalRobo(&temp_desac, &distIteracao, porcentagem));
 
