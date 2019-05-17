@@ -113,7 +113,7 @@ void definicaoDirRobo(int* mpx, int* mpy, double robo_x0, double robo_y0, double
 void definicAccelRobo(elementos *Robo, int i, short int v, double comp_x, double comp_y, double angulo)
 {
 	Robo->acc.mod[i] = (Robo->vel.mod[i] - Robo->vel.mod[i-1]) / TEMPO_ITERACAO;
-	
+
 	if(comp_y > 0){
 		Robo->acc.x[i] = Robo->acc.mod[i] * cos(angulo);
 		Robo->acc.y[i] = Robo->acc.mod[i] * sin(angulo);
@@ -312,11 +312,10 @@ int main (int argc, char * argv[])
 		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
-    
-    definicaoPosRobo(&robo, 1);
-		
-// 	robo.x[LINHA_INIC] = strtod(argv[1], NULL);
-// 	robo.y[LINHA_INIC] = strtod(argv[2], NULL);
+
+
+		robo.x[LINHA_INIC] = strtod(argv[1], NULL);
+		robo.y[LINHA_INIC] = strtod(argv[2], NULL);
 
 // 	printf("%lf\n%lf\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
 
