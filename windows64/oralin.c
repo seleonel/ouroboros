@@ -312,12 +312,13 @@ int main (int argc, char * argv[])
 		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
-
+    
+    definicaoPosRobo(&robo, 1);
 		
-	robo.x[LINHA_INIC] = strtod(argv[1], NULL);
-	robo.y[LINHA_INIC] = strtod(argv[2], NULL);
+// 	robo.x[LINHA_INIC] = strtod(argv[1], NULL);
+// 	robo.y[LINHA_INIC] = strtod(argv[2], NULL);
 
-	printf("%lf\n%lf\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
+// 	printf("%lf\n%lf\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
 
 
 	//definicaoPosRobo(&robo, verboso);
