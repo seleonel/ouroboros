@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>768</height>
+    <height>649</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1024</width>
-    <height>768</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
    <widget class="QPushButton" name="run_bot">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>320</x>
       <y>20</y>
       <width>131</width>
       <height>71</height>
@@ -160,10 +160,16 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>150</y>
       <width>981</width>
-      <height>551</height>
+      <height>461</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>Graficos</string>

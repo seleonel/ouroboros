@@ -1,13 +1,17 @@
 #include "oranela.h"
 #include "ui_oranela.h"
 #include <QPushButton>
+#include <iostream>
 #include <QPixmap>
 #include <stdlib.h>
 #include <QLineEdit>
 #include <stdio.h>
 #include <QMessageBox>
+#include <sstream>
+#include <QLocale>
 static double rob_x = 0.0;
 static double rob_y = 0.0;
+
 oranela::oranela(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::oranela)
@@ -51,12 +55,22 @@ oranela::~oranela()
 
 void oranela::iniciarProg()
 {
-    char param[100];
+    //char param[100];
     rob_x = (ui->lab_x->text()).toDouble();
     rob_y = (ui->lab_y->text()).toDouble();
-    sprintf(param, " cd .. && %s %lf %lf", "./ouroboros.out", rob_x, rob_y);
-    system(param);
+    std::cout << rob_x << std::endl << rob_y << std::endl;
 
+    if((rob_x < 0 || rob_x > 9) || (rob_y < 0 || rob_y > 6))
+    {
+        QMessageBox::about(this, "PRERIGO", "Digite um valor válido");
+    }else{
+        //sprintf(param, " cd .. && %s %lf %lf" , "./ouroboros.out", rob_x,  rob_y);
+        std::ostringstream stream_param;
+        stream_param << "cd .. && " << "./ouroboros.out " << rob_x << " " << rob_y;
+        std::string param = (stream_param.str());
+        const char *teste = param.c_str();
+        system(teste);
+}
 }
 void oranela::abrirImgPos()
 {

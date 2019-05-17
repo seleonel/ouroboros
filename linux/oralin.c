@@ -296,25 +296,26 @@ int definicMovRobo(elementos *Bol, elementos *Rob, int* versor_x, int* versor_y,
 int main (int argc, char * argv[])
 {
 	elementos bola, robo;
-	short int verboso = 0;
+	short int verboso 	= 0;
 	double temp_desac;
 	double distIteracao;
-	float porcentagem = 0.05;
+	float porcentagem 	= 0.05;
 	int i, pontoDeEncontro;
-	robo.diam = 0.180f;
-	bola.diam	= 0.046f;
-	robo.vel.x[2] = 0.0;
-	robo.vel.y[2] = 0.0;
+	robo.diam 		= 0.180f;
+	bola.diam		= 0.046f;
+	robo.vel.x[2] 		= 0.0;
+	robo.vel.y[2] 		= 0.0;
 
-		float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce;
+	float raio_interc = (robo.diam/2) + (bola.diam/2) + dist_bounce;
 
 	if(verboso != 0)
 		fclose(fopen("../logs/log", "w"));
 	for(i = 0; i < 400; i++)
 		bola.tempo[i] = bola.x[i] = bola.y[i] = robo.x[i] = robo.y[i] = robo.tempo[i] = 0;
 
-	robo.x[LINHA_INIC] = strtol(argv[1],NULL, 10);
-	robo.y[LINHA_INIC] = strtol(argv[2],NULL, 10);
+		
+	robo.x[LINHA_INIC] = strtod(argv[1], NULL);
+	robo.y[LINHA_INIC] = strtod(argv[2], NULL);
 
 	printf("%lf\n%lf\n", robo.x[LINHA_INIC], robo.y[LINHA_INIC]);
 

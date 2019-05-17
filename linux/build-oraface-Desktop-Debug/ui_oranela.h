@@ -50,8 +50,8 @@ public:
     {
         if (oranela->objectName().isEmpty())
             oranela->setObjectName(QString::fromUtf8("oranela"));
-        oranela->resize(1024, 768);
-        oranela->setMinimumSize(QSize(1024, 768));
+        oranela->resize(1024, 649);
+        oranela->setMinimumSize(QSize(0, 0));
         QIcon icon;
         icon.addFile(QString::fromUtf8("../../imagens/ouroboros.png"), QSize(), QIcon::Normal, QIcon::Off);
         oranela->setWindowIcon(icon);
@@ -59,7 +59,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         run_bot = new QPushButton(centralWidget);
         run_bot->setObjectName(QString::fromUtf8("run_bot"));
-        run_bot->setGeometry(QRect(330, 20, 131, 71));
+        run_bot->setGeometry(QRect(320, 20, 131, 71));
         Traj = new QPushButton(centralWidget);
         Traj->setObjectName(QString::fromUtf8("Traj"));
         Traj->setGeometry(QRect(800, 10, 84, 91));
@@ -115,7 +115,12 @@ public:
 
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 160, 981, 551));
+        label_3->setGeometry(QRect(20, 150, 981, 461));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
         Posrel = new QPushButton(centralWidget);
         Posrel->setObjectName(QString::fromUtf8("Posrel"));
         Posrel->setGeometry(QRect(910, 10, 84, 91));
