@@ -6,65 +6,180 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>491</width>
-    <height>278</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>oranela</string>
+   <string>Ouroboros</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../imagens/ouroboros.png</normaloff>../../imagens/ouroboros.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="run_bot">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>20</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Run</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Traj">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>10</y>
+      <width>84</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trajetórias</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>82</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Coordenada Y</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lab_y">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>60</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>82</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Coordenada X</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lab_x">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>251</width>
-      <height>181</height>
+      <x>500</x>
+      <y>0</y>
+      <width>282</width>
+      <height>116</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="Velx">
        <property name="text">
-        <string>Coordenada X</string>
+        <string>Velocidade X</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLineEdit" name="lab_y">
+     <item row="2" column="1">
+      <widget class="QPushButton" name="Accx">
        <property name="text">
-        <string>0</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Coordenada Y</string>
+        <string>Aceleração X</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="lab_x">
+      <widget class="QPushButton" name="Posx">
        <property name="text">
-        <string>0</string>
+        <string>Posição X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="Posy">
+       <property name="text">
+        <string>Posição Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="Accy">
+       <property name="text">
+        <string>Aceleração Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="Vely">
+       <property name="text">
+        <string>Velocidade Y</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="run_bot">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>60</y>
-      <width>181</width>
-      <height>121</height>
+      <x>20</x>
+      <y>160</y>
+      <width>981</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="text">
-     <string>Run</string>
+     <string>Graficos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Posrel">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>10</y>
+      <width>84</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pos rel.</string>
     </property>
    </widget>
   </widget>

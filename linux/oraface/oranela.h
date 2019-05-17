@@ -17,6 +17,14 @@ public:
 
 public slots:
     void iniciarProg();
+    void abrirImgPos();
+    void abrirAccx();
+    void abrirAccy();
+    void abrirVelx();
+    void abrirVely();
+    void posRel();
+    void posX();
+    void posY();
 
 private:
     Ui::oranela *ui;
